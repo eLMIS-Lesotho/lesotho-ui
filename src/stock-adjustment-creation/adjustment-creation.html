@@ -48,7 +48,6 @@
             <caption ng-if="!vm.displayItems.length">{{vm.key('noProducts') | message}}</caption>
             <thead>
                 <tr>
-                    <th ng-if="vm.showDeliveryNoteAttributes">Reference Number</th>
                     <th>{{vm.key('productCode') | message}}</th>
                     <th>{{vm.key('product') | message}}</th>
                     <th ng-show="vm.hasLot">{{vm.key('lotCode') | message}}</th>
@@ -58,6 +57,8 @@
                     <th ng-show="vm.srcDstAssignments">{{vm.key('srcDstComments') | message}}</th>
                     <th ng-if="vm.showReasonDropdown">{{vm.key('reason') | message}}</th>
                     <th ng-if="vm.showReasonDropdown">{{vm.key('reasonComments') | message}}</th>
+                    <th ng-if="vm.showDeliveryNoteAttributes">Reference Number</th>
+                    <th ng-if="vm.showDeliveryNoteAttributes">Invoice Number</th>
                     <th>{{vm.key('quantity') | message}}</th>
                     <th ng-if="vm.showDeliveryNoteAttributes">Unit Price</th>
                     <th ng-if="vm.showDeliveryNoteAttributes">Amount</th>
@@ -69,7 +70,6 @@
             </thead>
             <tbody>
                 <tr ng-repeat="lineItem in vm.items">
-                    <td ng-if="vm.showDeliveryNoteAttributes">REF1001</td>
                     <td>{{lineItem.orderable.productCode}}</td>
                     <td>{{lineItem.orderable | productName}}</td>
                     <td ng-show="vm.hasLot && vm.canEditLot(lineItem)">
@@ -105,6 +105,8 @@
                             ng-class="{'error': lineItem.$errors.quantityInvalid}"
                             ng-change="vm.validateQuantity(lineItem)" ng-blur="vm.validateQuantity(lineItem)" positive-integer/>
                     </td>
+                    <td ng-if="vm.showDeliveryNoteAttributes"><input class="form-control" type="text"></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes"><input class="form-control" type="text"></td>
                     <td ng-if="vm.showVVMStatusColumn">
                         <select ng-if="lineItem.orderable.extraData.useVVM == 'true'"
                             ng-model="lineItem.vvmStatus"
@@ -112,8 +114,8 @@
                             placeholder="{{'stockAdjustmentCreation.selectStatus' | message}}">
                         </select>
                     </td>
-                    <td ng-if="vm.showDeliveryNoteAttributes">LSL 100</td>
-                    <td ng-if="vm.showDeliveryNoteAttributes">LSL 20 000</td>
+                    <td ng-if="vm.showDeliveryNoteAttributes"><input class="form-control" type="text"></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes"><input class="form-control" type="text" readonly></td>
                     <td class="date-cell">
                         <input id="lineItem.occurredDate" type="date" ng-model="lineItem.occurredDate"
                             ng-change="vm.validateDate(lineItem)" max-date="vm.maxDate" required inputmode="none"/>
