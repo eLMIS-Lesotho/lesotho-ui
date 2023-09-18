@@ -1,0 +1,6 @@
+{
+    "requisitionView.acknowledge.confirm": "Are you sure you want to acknowledge this R&R?",
+    "requisitionView.acknowledge.failure": "Failed to acknowledge requisition!",
+    "requisitionView.acknowledge": "Acknowledge Requisition",
+    "requisitionView.acknowledge.success": "Requisition has been acknowledged!"
+}

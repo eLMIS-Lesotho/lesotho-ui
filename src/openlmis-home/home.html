@@ -1,0 +1,28 @@
+<div class="home-page">
+  
+  <div class="system-notification-list" ng-if="!vm.isOffline">
+    <h2> {{'openlmisSystemNotifications.systemNotifications' | message}} </h2>
+    <h3 ng-if="!vm.homePageSystemNotifications || vm.homePageSystemNotifications.length === 0">
+      {{'openlmisSystemNotifications.noSystemNotifications' | message}}
+    </h3>
+    <div class="scroll">
+      <div ng-repeat="systemNotification in vm.homePageSystemNotifications | orderBy: '-createdDate'">
+        <openlmis-message
+                message-title="systemNotification.title"
+                user-first-name="systemNotification.author.firstName"
+                user-last-name="systemNotification.author.lastName"
+                message-content="systemNotification.message"
+                created-date="systemNotification.createdDate">
+        </openlmis-message>
+      </div>
+    </div>
+  </div>
+
+  <div class="welcome-image">
+     <h1>Lesotho Ministry of Health</h1>
+     <h2>Logistics Management Information System</h2>
+  </div>
+
+  <!-- <h2>{{'openlmisHome.welcome' | message}}</h2> -->
+
+</div>
