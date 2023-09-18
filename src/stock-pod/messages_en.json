@@ -1,0 +1,12 @@
+{
+  "stockPOD.pod": "Point of Delivery",
+  "stockPOD.proceed": "Make Receive",
+  "stockPOD.program": "Program",
+  "stockPOD.action": "Action",
+  "stockPOD.title": "Receive for ${facility}",
+  "stockPOD.noProgramAvailable": "There are no programs for this facility. Please contact the Admin.",
+  "stockPOD.offline1": "You are offline. There are Receive events pending. They will be synchronized automatically when the internet connection returns.",
+  "stockPOD.offline2": "Please check ",
+  "stockPOD.pendingOfflineEvents": "Pending offline events",
+  "stockPOD.offline3": " for details."
+}
