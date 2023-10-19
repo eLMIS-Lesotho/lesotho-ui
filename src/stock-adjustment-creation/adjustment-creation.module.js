@@ -14,24 +14,22 @@
  */
 
 (function() {
-
     'use strict';
 
-    angular
-        .module('requisition-acknowledge')
-        .config(routes);
-
-    routes.$inject = ['$stateProvider'];
-
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
-        });
-    }
-
+    angular.module('stock-adjustment-creation', [
+        'openlmis-date',
+        'stock-adjustment',
+        'stock-confirm-discard',
+        'stock-orderable-group',
+        'stock-product-name',
+        'stock-constants',
+        'stock-valid-reason',
+        'referencedata-program',
+        'referencedata-facility',
+        'referencedata-lot',
+        'stock-unpack-kit',
+        'stock-reasons-modal',
+        'stock-edit-lot-modal',
+        'openlmis-currency'
+    ]);
 })();

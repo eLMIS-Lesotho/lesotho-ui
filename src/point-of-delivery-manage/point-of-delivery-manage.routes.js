@@ -18,20 +18,19 @@
     'use strict';
 
     angular
-        .module('requisition-acknowledge')
+        .module('point-of-delivery-manage')
         .config(routes);
 
-    routes.$inject = ['$stateProvider'];
+routes.$inject = ['$stateProvider'/*, 'STOCKMANAGEMENT_RIGHTS', 'ADJUSTMENT_TYPE'*/];
 
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
+    function routes($stateProvider/*, STOCKMANAGEMENT_RIGHTS, ADJUSTMENT_TYPE*/) {
+        $stateProvider.state('openlmis.pointOfDelivery.manage', {
             isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
+            url: '/Manage',
+            templateUrl: 'point-of-delivery-manage/point-of-delivery-manage.html',
+            label: 'pointOfDeliveryManage.title',
+            //priority: 4,
+            showInNavigation: true,
         });
     }
-
 })();

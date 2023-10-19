@@ -18,20 +18,14 @@
     'use strict';
 
     angular
-        .module('requisition-acknowledge')
-        .config(routes);
+        .module('stock-card-summary-list')
+        .run(declareRights);
 
-    routes.$inject = ['$stateProvider'];
+    declareRights.$inject = ['facilityProgramCacheService', 'STOCKMANAGEMENT_RIGHTS'];
 
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
-        });
+    function declareRights(facilityProgramCacheService, STOCKMANAGEMENT_RIGHTS) {
+        facilityProgramCacheService.pushRightsForModule('stock-card-summary-list', [
+            STOCKMANAGEMENT_RIGHTS.STOCK_CARDS_VIEW
+        ]);
     }
-
 })();

@@ -18,25 +18,18 @@
     'use strict';
 
     /**
-     * @module requisition-acknowledge
+     * @module
      *
      * @description
-     * Responsible for requisition acknowledge screen.
+     * Responsible for managing requisition for acknowledge list screen.
      */
     angular.module('requisition-acknowledge', [
-        'openlmis-templates',
-        'openlmis-i18n',
-        'openlmis-state-tracker',
-        'openlmis-modal',
-        'openlmis-date',
-        'openlmis-invalid',
-        'openlmis-permissions',
         'requisition',
-        'requisition-summary',
-        'requisition-validation',
-        'requisition-status-messages',
-        'requisition-acknowledge-tab',
-        'ui.router'
+        'openlmis-auth',
+        'openlmis-local-storage',
+        'openlmis-pagination',
+        'referencedata-program',
+        'ui.router',
+        'openlmis-feature-flag'
     ]);
-
 })();

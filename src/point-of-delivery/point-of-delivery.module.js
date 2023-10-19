@@ -17,21 +17,16 @@
 
     'use strict';
 
-    angular
-        .module('requisition-acknowledge')
-        .config(routes);
-
-    routes.$inject = ['$stateProvider'];
-
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
-        });
-    }
+    /**
+     * @module point-of-delivery
+     *
+     * @description
+     * Provides point-of-delivery state and controller.
+     */
+    angular.module('point-of-delivery', [
+        'ui.router',
+        'openlmis-config'
+    ]);
 
 })();
+

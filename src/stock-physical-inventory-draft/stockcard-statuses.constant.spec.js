@@ -13,25 +13,27 @@
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org. 
  */
 
-(function() {
+describe('STOCKCARD_STATUS', function() {
 
-    'use strict';
+    var STOCKCARD_STATUS;
 
-    angular
-        .module('requisition-acknowledge')
-        .config(routes);
+    beforeEach(function() {
+        module('stock-constants');
 
-    routes.$inject = ['$stateProvider'];
-
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
+        inject(function($injector) {
+            STOCKCARD_STATUS = $injector.get('STOCKCARD_STATUS');
         });
-    }
+    });
 
-})();
+    describe('getDisplayName', function() {
+        it('should get display name for ACTIVE status', function() {
+            expect(STOCKCARD_STATUS.$getDisplayName(STOCKCARD_STATUS.ACTIVE))
+                .toBe('stockPhysicalInventoryDraft.statusActive');
+        });
+
+        it('should get display name for INACTIVE status', function() {
+            expect(STOCKCARD_STATUS.$getDisplayName(STOCKCARD_STATUS.INACTIVE))
+                .toBe('stockPhysicalInventoryDraft.statusInactive');
+        });
+    });
+});

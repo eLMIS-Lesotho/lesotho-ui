@@ -1,0 +1,14 @@
+{
+  "pointOfDeliveryManage.title": "Manage Point of Delivery",
+  "pointOfDeliveryManage.facility": "Facility",
+  "pointOfDeliveryManage.supplier": "Supplier",
+  "pointOfDeliveryManage.remarks": "Remarks",
+  "pointOfDeliveryManage.referenceNo": "Reference Number",
+  "pointOfDeliveryManage.packingDate": "Packing Date",
+  "pointOfDeliveryManage.packedBy": "Packed By",
+  "pointOfDeliveryManage.numberOfCartons": "Number of Cartons",
+  "pointOfDeliveryManage.numberOfContainers": "Number of Containers",
+  "pointOfDeliveryManage.receivedBy": "Received By",
+  "pointOfDeliveryManage.receivedDate": "Receiving Date",
+  "pointOfDeliveryManage.submit": "Submit"
+}

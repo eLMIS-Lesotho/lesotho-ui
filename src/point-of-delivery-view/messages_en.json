@@ -1,0 +1,13 @@
+{
+  "pointOfDeliveryView.title": "View Deliveries",
+  "pointOfDeliveryView.label": "View",
+  "pointOfDeliveryView.facility": "Facility",
+  "pointOfDeliveryView.referenceNo": "Reference Number",
+  "pointOfDeliveryView.packingDate": "Packing Date",
+  "pointOfDeliveryView.packedBy": "Packed By",
+  "pointOfDeliveryView.numberOfCartons": "Number of Cartons",
+  "pointOfDeliveryView.numberOfContainers": "Number of Containers",
+  "pointOfDeliveryView.receivedBy": "Received By",
+  "pointOfDeliveryView.receivedDate": "Receiving Date",
+  "pointOfDeliveryView.submit": "Submit"
+}

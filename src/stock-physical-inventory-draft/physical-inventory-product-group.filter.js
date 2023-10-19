@@ -12,26 +12,33 @@
  * the GNU Affero General Public License along with this program. If not, see
  * http://www.gnu.org/licenses.  For additional information contact info@OpenLMIS.org. 
  */
-
 (function() {
-
     'use strict';
 
+    /**
+     * @ngdoc filter
+     * @name stock-physical-inventory-draft.filter:groupByProgramProductCategory
+     *
+     * @description
+     * Groups nested array of physical inventory line item by 'orderableCategoryDisplayName'
+     *
+     * @param   {Array}  List of objects to be grouped
+     * @param   {String} programId
+     * @return  {Object} Grouped products - category name as key and array of products as value
+     */
     angular
-        .module('requisition-acknowledge')
-        .config(routes);
+        .module('stock-physical-inventory-draft')
+        .filter('groupByProgramProductCategory', groupByProgramProductCategory);
 
-    routes.$inject = ['$stateProvider'];
-
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
-        });
+    function groupByProgramProductCategory() {
+        return function(items, programId) {
+            return _.groupBy(items, function(item) {
+                return _.findWhere(item[0].orderable.programs,
+                    {
+                        programId: programId
+                    }).orderableCategoryDisplayName;
+            });
+        };
     }
 
 })();

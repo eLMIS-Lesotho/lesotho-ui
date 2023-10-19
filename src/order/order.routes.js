@@ -18,19 +18,20 @@
     'use strict';
 
     angular
-        .module('requisition-acknowledge')
+        .module('order')
         .config(routes);
 
     routes.$inject = ['$stateProvider'];
 
     function routes($stateProvider) {
 
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
+        $stateProvider.state('openlmis.orders', {
+            abstract: true,
+            url: '/orders',
+            showInNavigation: false, //Removing Orders(Fulfill orders, Manage proof of delivery, View Orders) for Lesotho eLMIS
+            priority: 10,
+            label: 'order.orders',
+            template: '<div ui-view></div>'
         });
     }
 

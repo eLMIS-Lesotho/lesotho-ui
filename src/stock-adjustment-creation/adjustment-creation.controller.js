@@ -107,6 +107,13 @@
     vm.lotChanged = lotChanged;
     vm.addProduct = addProduct;
     vm.hasPermissionToAddNewLot = hasPermissionToAddNewLot;
+    //vm.UPrice;
+    vm.FromSupplier = false; 
+    vm.hideColumns=function(){
+      //vm.FromSupplier = true;
+      console.log($scope);vm.addedLineItems[0].assignment.name
+      vm.UPrice=$scope.lineItem.assignment.name;
+    }
 
     /**
      * @ngdoc property

@@ -17,21 +17,20 @@
 
     'use strict';
 
-    angular
-        .module('requisition-acknowledge')
-        .config(routes);
-
-    routes.$inject = ['$stateProvider'];
-
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
-            isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
-        });
-    }
+    /**
+     * @module stock-card-summary-list
+     *
+     * @description
+     * Provides stock card summaries state and controller for viewing stock card list.
+     */
+    angular.module('stock-card-summary-list', [
+        'stockmanagement',
+        'stock-card-summary',
+        'stock-constants',
+        'openlmis-facility-program-select',
+        'openlmis-pagination',
+        'openlmis-templates',
+        'ui.router'
+    ]);
 
 })();

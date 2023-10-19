@@ -18,20 +18,19 @@
     'use strict';
 
     angular
-        .module('requisition-acknowledge')
+        .module('redistribution-create')
         .config(routes);
 
-    routes.$inject = ['$stateProvider'];
+routes.$inject = ['$stateProvider'/*, 'STOCKMANAGEMENT_RIGHTS', 'ADJUSTMENT_TYPE'*/];
 
-    function routes($stateProvider) {
-
-        $stateProvider.state('openlmis.requisitions.acknowledgeList', {
-            showInNavigation: true,
+    function routes($stateProvider/*, STOCKMANAGEMENT_RIGHTS, ADJUSTMENT_TYPE*/) {
+        $stateProvider.state('openlmis.redistribution.create', {
             isOffline: true,
-            label: 'requisitionAcknowledge.acknowledge',
-            url: '/acknowledgeList?page&size&program&offline&sort',
-            templateUrl: 'requisition-acknowledge/requisition-acknowledge-list.html'
+            url: '/Create',
+            templateUrl: 'redistribution-create/redistribution-create_02.html',
+            label: 'redistributionCreate.label',
+            //priority: 4,
+            showInNavigation: true,
         });
     }
-
 })();
