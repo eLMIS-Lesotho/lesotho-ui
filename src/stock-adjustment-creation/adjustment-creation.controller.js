@@ -615,8 +615,11 @@
                 lineItem.lot.tradeItemId === lot.tradeItemId
               ) {
                 lineItem.lot = lot;
+                console.log(lineItem);
               }
             });
+            //Testing PayLoad 
+            console.log(addedLineItems);
             return addedLineItems;
           });
 
