@@ -618,8 +618,6 @@
                 console.log(lineItem);
               }
             });
-            //Testing PayLoad 
-            console.log(addedLineItems);
             return addedLineItems;
           });
 
