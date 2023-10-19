@@ -617,6 +617,8 @@
                 lineItem.lot = lot;
               }
             });
+            //Testing PayLoad 
+            console.log(addedLineItems)
             return addedLineItems;
           });
 
