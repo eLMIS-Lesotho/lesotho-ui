@@ -104,15 +104,15 @@
                     <td ng-if="vm.showReasonDropdown">
                         <input type="text" ng-show="lineItem.reason.isFreeTextAllowed" ng-model="lineItem.reasonFreeText" rows="1" cols="15"></input>
                     </td>
-                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" type="text" value="{{lineItem.assignment}}" ng-show="lineItem.assignment.name=='NGO'"></td>
-                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" type="text" value="" ng-show="lineItem.assignment.name=='NGO'"></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" type="text" value="{{lineItem.assignment}}" ng-model="lineItem.referenceNumber" ng-show="lineItem.assignment.name=='NGO'"></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" type="text" value="" ng-model="lineItem.invoiceNumber" ng-show="lineItem.assignment.name=='NGO'"></td>
                     <td openlmis-invalid="{{lineItem.$errors.quantityInvalid}}" class="digit-cell">
                         <input class="form-control" ng-model="lineItem.quantity"
                             ng-class="{'error': lineItem.$errors.quantityInvalid}"
                             ng-change="vm.validateQuantity(lineItem)" ng-blur="vm.validateQuantity(lineItem)" positive-integer value="0"/>
                     </td>
-                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" value="{{ 0 | openlmisCurrency}}" type="text" ng-model="lineItem.UPrice" ng-show="lineItem.assignment.name=='NGO'"></td>
-                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input type="text" readonly value="{{ (lineItem.quantity*lineItem.UPrice) | openlmisCurrency}}" ng-show="lineItem.assignment.name=='NGO'"/></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input class="form-control" value="{{ 0 | openlmisCurrency}}" type="text" ng-model="lineItem.unitPrice" ng-show="lineItem.assignment.name=='NGO'"></td>
+                    <td ng-if="vm.showDeliveryNoteAttributes" ng-hide="vm.FromSupplier"><input type="text" readonly value="{{ (lineItem.quantity*lineItem.unitPrice) | openlmisCurrency}}" ng-show="lineItem.assignment.name=='NGO'"/></td>
                     <td ng-if="vm.showVVMStatusColumn">
                         <select ng-if="lineItem.orderable.extraData.useVVM == 'true'"
                             ng-model="lineItem.vvmStatus"
